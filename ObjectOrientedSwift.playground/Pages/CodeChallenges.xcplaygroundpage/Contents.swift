@@ -27,3 +27,36 @@ struct Person {
 
 let aPerson = Person(firstName: "Al",lastName: "Sinoy")
 let myFullName = aPerson.fullName()
+
+
+
+// Code Challenge
+struct RGBColor {
+    let red: Double
+    let green: Double
+    let blue: Double
+    let alpha: Double
+    
+    let description: String
+    
+    // Add your code below
+    init(red: Double, green: Double, blue: Double, alpha: Double){
+        //don't need to define description as we set it ourselves
+        self.red = red
+        self.green = green
+        self.blue = blue
+        self.alpha = alpha
+        self.description = "red: \(self.red), green: \(self.green), blue: \(self.blue), alpha: \(self.alpha)"
+    }
+}
+
+// Code Challenge
+class Shape {
+    var numberOfSides: Int
+    
+    init(numberOfSides: Int){
+        self.numberOfSides = numberOfSides
+    }
+}
+
+let someShape = Shape(numberOfSides: 3)
