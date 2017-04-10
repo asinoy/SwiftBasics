@@ -56,4 +56,39 @@ class Enemy {
     }
 }
 
+class Tower {
+    let position:Point
+    var range: Int = 1
+    var strength: Int = 1
+    
+    init(x: Int, y: Int) {
+        self.position = Point(x: x, y: y)
+    }
+    
+    func fire(at enemy: Enemy){
+        if isInRange(of: enemy){
+            enemy.decreaseLife(by: strength)
+            print("Gotcha")
+        } else {
+            print("Doh, out of range")
+        }
+    }
+    
+    func isInRange(of enemy: Enemy) -> Bool {
+        let availablePositions = position.points(inRange: range)
+        
+        for point in availablePositions{
+            if point.x == enemy.position.x && point.y == enemy.position.y {
+                return true
+            }
+        }
+        return false
+    }
+}
 
+let tower = Tower(x: 0, y: 0)
+let enemy = Enemy(x: 1, y: 1)
+let secondEnemy = Enemy(x: 2, y: 1)
+
+tower.fire(at: enemy)
+tower.fire(at: secondEnemy)

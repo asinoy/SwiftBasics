@@ -60,3 +60,21 @@ class Shape {
 }
 
 let someShape = Shape(numberOfSides: 3)
+
+//Code Challenge
+struct Location {
+    let latitude: Double
+    let longitude: Double
+}
+
+class Business{
+    let name: String
+    let location: Location
+    
+    init(name: String, location: Location){
+        self.name = name
+        self.location = location
+    }
+}
+
+let someBusiness = Business(name: "Centre for Digial Media", location: Location(latitude: 49.2672, longitude: 123.0903))
